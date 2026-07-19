@@ -21,7 +21,7 @@ const nodeSchema = new mongoose.Schema({
   },
   type: {
     type: String,
-    enum: ['Root', 'Fracture', 'Mirror', 'Bridge', 'Paradox', 'Synthesis'],
+    enum: ['Root', 'Fracture', 'Mirror', 'Bridge', 'Paradox', 'Synthesis', 'Explore'],
     default: 'Root'
   },
   ancestryPath: [{
