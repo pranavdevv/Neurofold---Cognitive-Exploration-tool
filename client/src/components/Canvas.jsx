@@ -15,6 +15,8 @@ const nodeTypes = {
   custom: CustomNode,
 };
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const Canvas = ({ treeId }) => {
   const { nodes, setNodes, edges, setEdges, setSelectedNode } = useStore();
 
@@ -34,7 +36,7 @@ const Canvas = ({ treeId }) => {
 
   const onNodeDragStop = useCallback(async (_, node) => {
     try {
-      await axios.put(`http://localhost:5000/api/nodes/${node.data.dbId}/position`, {
+      await axios.put(`${API_URL}/api/nodes/${node.data.dbId}/position`, {
         position: node.position
       });
     } catch (err) {
